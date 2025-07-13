@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Goverdhan Kumar | Cybersecurity Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Share Tech Mono', monospace;
+      background: #000;
+      color: #33ff33;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    canvas.matrix {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -2;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(5px);
+      z-index: -1;
+    }
+
+    a {
+      color: #00ffee;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: red;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      text-shadow: 0 0 5px #33ff33;
+    }
+
+    #typewriter {
+      display: inline-block;
+      min-height: 1.2em;
+      font-size: 1.1rem;
+      color: #00ffee;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: #00000080;
+      backdrop-filter: blur(6px);
+      padding: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    nav a {
+      color: #00ffee;
+      margin: 0 12px;
+      font-size: 1rem;
+      border-bottom: 1px dashed transparent;
+      transition: border-bottom 0.3s;
+    }
+
+    nav a:hover {
+      color: red;
+      border-bottom: 1px dashed red;
+    }
+
+    section {
+      padding: 2rem 1.5rem;
+      max-width: 900px;
+      margin: auto;
+      border-left: 3px solid #00ff99;
+    }
+
+    h2 {
+      color: #00ff99;
+      border-bottom: 1px dashed #00ff99;
+      padding-bottom: 0.3rem;
+    }
+
+    ul {
+      list-style: square;
+      padding-left: 1rem;
+    }
+
+    li {
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #888;
+      border-top: 1px dashed #00ff99;
+    }
+
+    ::selection {
+      background: #00ff99;
+      color: #000;
+    }
+
+    code {
+      background-color: #111;
+      padding: 2px 4px;
+      border-radius: 4px;
+      color: #0ff;
+    }
+  </style>
+</head>
+<body>
+  <canvas class="matrix"></canvas>
+  <div class="overlay"></div>
+
+  <header>
+    <div style="width: 120px; height: 120px; border-radius: 50%; background-image: url('https://raw.githubusercontent.com/wh04M1i/wh04m1i.github.io/main/profile.jpeg'); background-size: cover; background-position: center; margin: auto; box-shadow: 0 0 15px #00ff99;"></div>
+    <h1>&lt;/&gt; Goverdhan Kumar</h1>
+    <p>Cybersecurity Engineer | Digital Forensics Enthusiast | Speaker | Educator | Sketch Artist</p>
+    <p style="margin-top: 10px;">
+      <a href="mailto:kumarpgoverdhan@gmail.com">kumarpgoverdhan@gmail.com</a> |
+      <a href="tel:+919523917937">+91 9523917937</a>
+    </p>
+    <p>
+      <a href="https://linkedin.com/in/wh04m1i" target="_blank">LinkedIn</a> |
+      <a href="https://github.com/wh04m1i" target="_blank">GitHub</a> |
+      <a href="https://instagram.com/who4m1i" target="_blank">Instagram</a>
+    </p>
+    <p><span id="typewriter"></span><span class="cursor">_</span></p>
+  </header>
+
+  <nav>
+    <a href="index.html">[ Home ]</a>
+    <a href="writeups.html">[ Writeups ]</a>
+    <a href="sessions.html">[ Sessions ]</a>
+    <a href="startups.html">[ Startups ]</a>
+    <a href="gallery.html">[ Gallery ]</a>
+    <a href="contact.html">[ Contact ]</a>
+  </nav>
+
+  <section>
+    <h2>Contact & Links</h2>
+    <ul>
+      <li><a href="https://www.vulnshields.net" target="_blank">Vulnshields Consulting Pvt. Ltd.</a></li>
+      <li><a href="https://www.linkedin.com/in/wh04m1i" target="_blank">LinkedIn</a></li>
+      <li><a href="http://github.com/wh04M1i" target="_blank">GitHub (wh04M1i)</a></li>
+      <li><a href="https://foxfoster.com" target="_blank">Foxfoster Website</a></li>
+      <li><a href="https://foxfoster.com/theartact" target="_blank">The Art Act Website</a></li>
+      <li><a href="https://instagram.com/who4m1i" target="_blank">Instagram (Personal)</a></li>
+      <li><a href="https://youtube.com/c/goverdhansarts" target="_blank">Art YouTube Channel</a></li>
+      <li><a href="https://instagram.com/1001_fox" target="_blank">Hacking Instagram Page</a></li>
+      <li><a href="https://instagram.com/the_art_act" target="_blank">The Art Act Instagram</a></li>
+      <li><a href="https://youtube.com/channel/UCVGO5_YndH1XGYdbvKpACUQ" target="_blank">Hacking & Programming YouTube</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    &copy; 2025 Goverdhan Kumar • <a href="https://github.com/wh04m1i">GitHub</a> • <a href="https://linkedin.com/in/wh04m1i">LinkedIn</a>
+  </footer>
+
+  <script>
+    const roles = [
+      "Cybersecurity Engineer",
+      "Digital Forensics",
+      "OSINT",
+      "Educator",
+      "Sketch Artist"
+    ];
+
+    let i = 0, j = 0, current = "", isDeleting = false;
+    const speed = 100;
+
+    function typeEffect() {
+      const typeBox = document.getElementById("typewriter");
+
+      if (i < roles.length) {
+        if (!isDeleting && j <= roles[i].length) {
+          current = roles[i].substring(0, j++);
+          typeBox.textContent = current;
+          setTimeout(typeEffect, speed);
+        } else if (isDeleting && j > 0) {
+          current = roles[i].substring(0, --j);
+          typeBox.textContent = current;
+          setTimeout(typeEffect, speed / 2);
+        } else if (!isDeleting && j > roles[i].length) {
+          isDeleting = true;
+          setTimeout(typeEffect, 1000);
+        } else {
+          isDeleting = false;
+          j = 0;
+          i = (i + 1) % roles.length;
+          setTimeout(typeEffect, 200);
+        }
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      typeEffect();
+
+      // Matrix effect
+      const canvas = document.querySelector("canvas.matrix");
+      const ctx = canvas.getContext("2d");
+      canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth;
+      const letters = Array(256).join("1").split("");
+
+      function draw() {
+        ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "#33ff33";
+        letters.forEach((y_pos, index) => {
+          const text = String.fromCharCode(3e4 + Math.random() * 33);
+          const x_pos = index * 10;
+          ctx.fillText(text, x_pos, y_pos);
+          letters[index] = y_pos > canvas.height + Math.random() * 1e4 ? 0 : y_pos + 10;
+        });
+      }
+      setInterval(draw, 33);
+    });
+  </script>
+</body>
+</html>

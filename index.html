@@ -7,63 +7,121 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Share Tech Mono', monospace;
-      background-color: #0d0d0d;
-      color: #33ff33;
     }
+
+    body {
+      font-family: 'Share Tech Mono', monospace;
+      background: #000;
+      color: #33ff33;
+      overflow: hidden;
+    }
+
+    canvas.matrix {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -2;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      z-index: -1;
+    }
+
     a {
       color: #00ffee;
       text-decoration: none;
+      transition: color 0.3s;
     }
+
+    a:hover {
+      color: red;
+    }
+
     header {
       text-align: center;
       padding: 2rem 1rem;
-      background: #000;
-      box-shadow: 0 0 10px #00ff99;
     }
+
     header h1 {
-      margin: 0;
       font-size: 2.5rem;
       text-shadow: 0 0 5px #33ff33;
     }
-    header p {
-      margin-top: 0.5rem;
+
+    #typewriter {
+      display: inline-block;
+      min-height: 1.2em;
       font-size: 1.1rem;
-      color: #a0ffa0;
+      color: #00ffee;
     }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: #00000080;
+      backdrop-filter: blur(6px);
+      padding: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    nav a {
+      color: #00ffee;
+      margin: 0 12px;
+      font-size: 1rem;
+      border-bottom: 1px dashed transparent;
+      transition: border-bottom 0.3s;
+    }
+
+    nav a:hover {
+      color: red;
+      border-bottom: 1px dashed red;
+    }
+
     section {
       padding: 2rem 1.5rem;
       max-width: 900px;
       margin: auto;
       border-left: 3px solid #00ff99;
-      margin-bottom: 2rem;
     }
+
     h2 {
       color: #00ff99;
       border-bottom: 1px dashed #00ff99;
       padding-bottom: 0.3rem;
     }
+
     ul {
       list-style: square;
       padding-left: 1rem;
     }
+
     li {
       margin-bottom: 1rem;
     }
+
     footer {
       text-align: center;
       padding: 2rem 1rem;
       color: #888;
       border-top: 1px dashed #00ff99;
-      background-color: #000;
     }
+
     ::selection {
       background: #00ff99;
       color: #000;
     }
+
     code {
       background-color: #111;
       padding: 2px 4px;
@@ -73,66 +131,111 @@
   </style>
 </head>
 <body>
+  <canvas class="matrix"></canvas>
+  <div class="overlay"></div>
+
   <header>
+    <div style="width: 120px; height: 120px; border-radius: 50%; background-image: url('your-photo.jpg'); background-size: cover; background-position: center; margin: auto; box-shadow: 0 0 15px #00ff99;"></div>
     <h1>&lt;/&gt; Goverdhan Kumar</h1>
-    <p>Cybersecurity Engineer | Digital Forensics Enthusiast | Sketch Artist</p>
-    <p>
+    <p>Cybersecurity Engineer | Digital Forensics Enthusiast | Speaker | Educator | Sketch Artist</p>
+    <p style="margin-top: 10px;">
       <a href="mailto:kumarpgoverdhan@gmail.com">kumarpgoverdhan@gmail.com</a> |
-      <a href="tel:+919523917937">+91 9523917937</a><br/>
-      <a href="https://linkedin.com/in/wh04m1i">LinkedIn</a> |
-      <a href="https://github.com/wh04m1i">GitHub</a> |
-      <a href="https://instagram.com/who4m1i">Instagram</a>
+      <a href="tel:+919523917937">+91 9523917937</a>
     </p>
+    <p>
+      <a href="https://linkedin.com/in/wh04m1i" target="_blank">LinkedIn</a> |
+      <a href="https://github.com/wh04m1i" target="_blank">GitHub</a> |
+      <a href="https://instagram.com/who4m1i" target="_blank">Instagram</a>
+    </p>
+    <p><span id="typewriter"></span><span class="cursor">_</span></p>
   </header>
 
-  <section>
-    <h2>Professional Summary</h2>
-    <p>Cybersecurity enthusiast with hands-on experience in web security, digital forensics, and awareness training. Passionate about sharing knowledge through college sessions, public speaking, and community outreach. Also interested in personal development and regularly explore self-improvement books and mentoring opportunities.</p>
-  </section>
+  <nav>
+    <a href="#">[ About ]</a>
+    <a href="writeups.html">[ Writeups ]</a>
+    <a href="sessions.html">[ Sessions ]</a>
+    <a href="startups.html">[ Startups ]</a>
+    <a href="gallery.html">[ Gallery ]</a>
+    <a href="contact.html">[ Contact ]</a>
+  </nav>
 
   <section>
-    <h2>Experience</h2>
+    <h2>About Me</h2>
+    <p>Hello! I'm <strong>Goverdhan Kumar</strong>, a cybersecurity engineer deeply passionate about securing the digital world and empowering others through knowledge. I specialize in web application security, digital forensics, and OSINT. With a background rooted in ethical hacking and security education, I believe in demystifying cyber concepts for students and professionals alike.</p>
+    <p>I love conducting awareness sessions, solving forensic challenges, reading self-help books, and converting ideas into action. I come from <strong>Patna, Bihar</strong> and currently reside in <strong>Noida, Uttar Pradesh</strong> — always exploring new ways to bridge cybersecurity with real-world impact.</p>
+    <p>Whether it's hosting a CTF, sketching, building security tools, or leading awareness campaigns — I'm a self-learner, public speaker, mentor, and a lifelong explorer.</p>
+    <p><strong>I'm also the co-founder of three growing ventures that reflect my passions:</strong></p>
     <ul>
-      <li><strong>Cybersecurity Engineer – TCS (Jan 2025 – Present)</strong><br/>SAST, DAST, MAST, secure coding, OWASP guidelines, Fortify, ZAP, Burp Suite.</li>
-      <li><strong>WBL Intern – NIELIT (Feb 2024 – Aug 2024)</strong><br/>Cybersecurity training, digital forensics labs, awareness sessions.</li>
-      <li><strong>Chapter Lead – Cyber Secured India (Mar 2023 – Jan 2025)</strong><br/>Workshops, Autopsy demos, webinars.</li>
-      <li><strong>Intern – NCIIPC (Jun 2023 – Aug 2023)</strong><br/>PCAP analysis, threat detection tools, IDS rule application.</li>
-      <li><strong>WAPT Intern – VIEH Group (May 2022 – Aug 2022)</strong><br/>Web security testing, CTFs, intern mentoring, LinkedIn content.</li>
-      <li><strong>Intern – Cyber Crime Cell Gurugram (Jun 2021 – Jul 2021)</strong><br/>Cyber investigation support, legal documentation.</li>
+      <li><strong>Foxfoster</strong> – A platform offering freelancing services, blogs, and digital content. Through Foxfoster, I aim to share practical knowledge and empower learners through educational tools and awareness initiatives.</li>
+      <li><strong>The Art Act</strong> – A personal brand focused on sketching and digital art. I create hand-drawn and digital illustrations, blending creativity with cybersecurity awareness.</li>
+      <li><strong>Vulnshields Consulting Pvt. Ltd.</strong> – A cybersecurity consulting company delivering VAPT, training, and awareness services to secure digital environments and empower organizations.</li>
     </ul>
-  </section>
-
-  <section>
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>PCAP Parsing Tool:</strong> Snort/YARA integration, JSON outputs, graphical summaries.</li>
-      <li><strong>URLGuardian:</strong> VirusTotal-based IP/URL scanner.</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Skills</h2>
-    <ul>
-      <li><strong>Application Security:</strong> Fortify, Burp Suite, ZAP, SDLC</li>
-      <li><strong>Digital Forensics:</strong> FTK Imager, Autopsy, Recuva, MVT</li>
-      <li><strong>Network Analysis:</strong> Wireshark, Zeek, Snort, Suricata</li>
-      <li><strong>Programming:</strong> Python, C++, Bash</li>
-      <li><strong>OS & Tools:</strong> Kali Linux, Ubuntu, Windows, macOS</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Certifications & Achievements</h2>
-    <ul>
-      <li>CCSP-AWS, CNSP, CAP – SecOps Group</li>
-      <li>IndiaSkills Cybersecurity – National Silver, State Gold</li>
-      <li>Intern of the Month – VIEH Group</li>
-      <li>Top 1% on TryHackMe</li>
-    </ul>
+    <p>Each of these reflects my mission to connect knowledge with creativity and bring real change through digital empowerment. Welcome to my personal portfolio — a space where security, learning, and expression converge.</p>
   </section>
 
   <footer>
-    <p>Made with <code>&lt;3</code> by Goverdhan Kumar | <a href="https://foxfoster.com">foxfoster.com</a></p>
+    &copy; 2025 Goverdhan Kumar • <a href="https://github.com/wh04m1i">GitHub</a> • <a href="https://linkedin.com/in/wh04m1i">LinkedIn</a>
   </footer>
+
+  <script>
+    const roles = [
+      "Cybersecurity Engineer",
+      "Digital Forensics",
+      "OSINT",
+      "Educator",
+      "Sketch Artist"
+    ];
+
+    let i = 0, j = 0, current = "", isDeleting = false;
+    const speed = 100;
+
+    function typeEffect() {
+      const typeBox = document.getElementById("typewriter");
+
+      if (i < roles.length) {
+        if (!isDeleting && j <= roles[i].length) {
+          current = roles[i].substring(0, j++);
+          typeBox.textContent = current;
+          setTimeout(typeEffect, speed);
+        } else if (isDeleting && j > 0) {
+          current = roles[i].substring(0, --j);
+          typeBox.textContent = current;
+          setTimeout(typeEffect, speed / 2);
+        } else if (!isDeleting && j > roles[i].length) {
+          isDeleting = true;
+          setTimeout(typeEffect, 1000);
+        } else {
+          isDeleting = false;
+          j = 0;
+          i = (i + 1) % roles.length;
+          setTimeout(typeEffect, 200);
+        }
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      typeEffect();
+
+      // Matrix effect
+      const canvas = document.querySelector("canvas.matrix");
+      const ctx = canvas.getContext("2d");
+      canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth;
+      const letters = Array(256).join("1").split("");
+
+      function draw() {
+        ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "#ff3333";
+        letters.forEach((y_pos, index) => {
+          const text = String.fromCharCode(3e4 + Math.random() * 33);
+          const x_pos = index * 10;
+          ctx.fillText(text, x_pos, y_pos);
+          letters[index] = y_pos > canvas.height + Math.random() * 1e4 ? 0 : y_pos + 10;
+        });
+      }
+      setInterval(draw, 33);
+    });
+  </script>
 </body>
 </html>

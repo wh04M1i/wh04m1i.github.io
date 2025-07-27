@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sessions | Goverdhan Kumar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Share Tech Mono', monospace;
+            background: #000;
+            color: #33ff33;
+        }
+
+        canvas.matrix {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -2;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            z-index: -1;
+        }
+
+        header,
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            border-bottom: 1px dashed #00ff99;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            color: #00ffee;
+            text-shadow: 0 0 5px #33ff33;
+        }
+
+        .session {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+            border-left: 3px solid #00ff99;
+            background-color: #111;
+            box-shadow: 0 0 10px #00ff99;
+        }
+
+        .session img {
+            width: 100%;
+            max-width: 100%;
+            border: 1px solid #00ff99;
+            box-shadow: 0 0 10px #00ff99;
+            margin-bottom: 1rem;
+        }
+
+        .session h3 {
+            margin-bottom: 0.5rem;
+            color: #00ffee;
+        }
+
+        .session p {
+            margin: 0.3rem 0;
+        }
+
+        .session ul {
+            list-style: square;
+            padding-left: 1rem;
+        }
+
+        .session li {
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            color: #00ffee;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: red;
+        }
+
+        footer {
+            border-top: 1px dashed #00ff99;
+            color: #888;
+            padding: 2rem 1rem;
+        }
+
+        .session p {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas class="matrix"></canvas>
+    <div class="overlay"></div>
+
+    <header>
+        <h1>&lt;/&gt; Sessions Conducted</h1>
+        <p>Cybersecurity Talks, Webinars & Hands-on Training</p>
+    </header>
+
+    <section class="sessions">
+
+
+        <!-- Session 1: Centurion University -->
+        <div class="session">
+            <img src="images/cent_unv_26_july_25.jpg" alt="Poster - Centurion University">
+            <h3>Web Security Testing Using Burp Suite</h3>
+            <p><strong>Date:</strong> 26 July 2025</p>
+            <p><strong>Organized by:</strong> Centurion University of Technology and Management</p>
+            <p><strong>Mode:</strong> Online</p>
+            <ul>
+                <li>Real-time Web App Hacking Practice</li>
+                <li>Deep Dive into Burp Suite Tools</li>
+                <li>Security Testing Checklist for Professionals</li>
+                <li>Understanding OWASP Top 10</li>
+                <li>Interactive Q&A session</li>
+            </ul>
+        </div>
+
+        <!-- Session 2: NSEC -->
+        <div class="session">
+            <img src="images/NSEC_7_july_25.jpg" alt="Poster - NSEC">
+            <h3>Cyber Awareness Workshop for Students</h3>
+            <p><strong>Date:</strong> 7 July 2025</p>
+            <p><strong>Organized by:</strong> Netaji Subhash Engineering College, Kolkata</p>
+            <p><strong>Mode:</strong> Online</p>
+            <ul>
+                <li>Cyber Hygiene & Digital Wellness</li>
+                <li>Women-Centric Online Safety Tips</li>
+                <li>Social Engineering and Scam Prevention</li>
+                <li>IT Laws & DPDP Act Awareness</li>
+                <li>Cybersecurity Career Roadmap</li>
+            </ul>
+        </div>
+
+        <!-- Session 3: KJSIT -->
+        <div class="session">
+            <img src="images/KJSIT_1_JUL_25.jpg" alt="Poster - KJSIT Cybercrime Session">
+            <h3>Cybercrime Investigation Masterclass</h3>
+            <p><strong>Date:</strong> 1 July 2025</p>
+            <p><strong>Organized by:</strong> K. J. Somaiya Institute of Technology</p>
+            <p><strong>Mode:</strong> Offline</p>
+            <ul>
+                <li>Cybercrime investigation techniques</li>
+                <li>Digital forensics and threat response</li>
+                <li>Real-world case insights for faculty participants</li>
+            </ul>
+        </div>
+
+        <!-- Session 4: GEC Lakhisarai -->
+        <div class="session">
+            <img src="images/gec_lakh_15_jan_25.jpg" alt="Poster - GEC Lakhisarai Workshop">
+            <h3>Cybersecurity Fundamentals Workshop</h3>
+            <p><strong>Date:</strong> 15–18 January 2025</p>
+            <p><strong>Organized by:</strong> Government Engineering College, Lakhisarai</p>
+            <p><strong>Mode:</strong> Offline</p>
+            <ul>
+                <li>Ethical Hacking and Web Security</li>
+                <li>Introduction to Cloud Security</li>
+                <li>Hands-on Capture-the-Flag Activities</li>
+                <li>Women in Cybersecurity – Awareness Drive</li>
+            </ul>
+        </div>
+
+        <!-- Session 5: Buxar -->
+        <div class="session">
+            <img src="images/GEC_BUX_22_NOV_24.png" alt="Poster - Buxar Cyber Workshop">
+            <h3>Cyber Awareness and Safety</h3>
+            <p><strong>Date:</strong> 22 November 2024</p>
+            <p><strong>Organized by:</strong> Government Engineering College, Buxar</p>
+            <p><strong>Mode:</strong> Online</p>
+            <ul>
+                <li>Safe Social Media Practices</li>
+                <li>Recognizing and Reporting Cyber Frauds</li>
+                <li>Data Privacy and Protection Laws</li>
+                <li>Careers in Cybersecurity</li>
+            </ul>
+        </div>
+
+        <!-- Session 6: Bakhtiyarpur -->
+        <div class="session">
+            <img src="images/GEC_BAKH_26_OCT_24.png" alt="Poster - Bakhtiyarpur Awareness Drive">
+            <h3>Women-Focused Cyber Safety Drive</h3>
+            <p><strong>Date:</strong> 26 October 2024</p>
+            <p><strong>Organized by:</strong> Government Engineering College, Bakhtiyarpur</p>
+            <p><strong>Mode:</strong> Online</p>
+            <ul>
+                <li>Digital Footprint Awareness</li>
+                <li>Mobile Security and Safe Browsing</li>
+                <li>Online Harassment Prevention</li>
+                <li>Cyber Hygiene Best Practices</li>
+            </ul>
+        </div>
+
+        <!-- Session 7: BCE Bhagalpur -->
+        <div class="session">
+            <img src="images/BCE_Bhag_vuln_14_DEC_24.png" alt="Poster - Bhagalpur Awareness Drive">
+            <h3>Ethical Hacking & Vulnerability Demo</h3>
+            <p><strong>Date:</strong> 14 December 2024</p>
+            <p><strong>Organized by:</strong> Bhagalpur College of Engineering</p>
+            <p><strong>Mode:</strong> Online</p>
+            <ul>
+                <li>Live Vulnerability Scanning & Reporting</li>
+                <li>Bug Bounty Mindset for Beginners</li>
+                <li>Hands-on Exploitation Basics</li>
+                <li>Demo of Real-Time Vulnerabilities</li>
+            </ul>
+        </div>
+
+    </section>
+
+
+    <section id="aspire-for-her">
+        <header>
+            <h1>Cybersecurity Workshops under Infosys Foundation – Aspire For Her</h1>
+            <p>Empowering students with real-world cybersecurity skills under a national initiative.</p>
+        </header>
+
+        <div class="session">
+            <p>
+                These sessions were conducted as part of the <strong>Free Skill Development Program</strong>,
+                supported by <strong>Infosys Foundation</strong> and <strong>Aspire For Her</strong>.
+                The initiative aims to equip final and pre-final year students with core cybersecurity skills to boost
+                their employability.
+            </p>
+            <p>
+                I contributed as a <strong>speaker and technical trainer</strong> through <strong>Cyber Secured
+                    India</strong>,
+                delivering hands-on sessions on <em>ethical hacking</em>, <em>network security</em>, and <em>social
+                    engineering</em>.
+            </p>
+        </div>
+
+        <!-- Session: GEC Lakhisarai -->
+        <div class="session">
+            <!-- <img src="images/gec_lakh_15_jan_25.jpg" alt="Poster - GEC Lakhisarai Workshop"> -->
+            <h3>Cybersecurity Fundamentals Workshop</h3>
+            <p><strong>Date:</strong> 15–18 January 2025</p>
+            <p><strong>Organized by:</strong> Government Engineering College, Lakhisarai</p>
+            <p><strong>Mode:</strong> Offline</p>
+            <ul>
+                <li>Ethical Hacking and Web Security</li>
+                <li>Introduction to Cloud Security</li>
+                <li>Hands-on Capture-the-Flag Activities</li>
+                <li>Women in Cybersecurity – Awareness Drive</li>
+            </ul>
+        </div>
+
+        <!-- Session: JECRC Jaipur (Social Engineering) -->
+        <div class="session">
+            <!-- <img src="images/jecrc_social_17_jan_25.jpg" alt="Poster - JECRC Social Engineering"> -->
+            <h3>Social Engineering and Tools</h3>
+            <p><strong>Date:</strong> 17 January 2025</p>
+            <p><strong>Organized by:</strong> JECRC University, Jaipur</p>
+            <p><strong>Mode:</strong> Online</p>
+            <ul>
+                <li>Concepts of Social Engineering</li>
+                <li>Live Tool Demonstrations (e.g., SEToolkit)</li>
+                <li>Cyber Behavior Exploitation Awareness</li>
+            </ul>
+        </div>
+
+        <!-- Session: NFSU Tripura -->
+        <div class="session">
+            <!-- <img src="images/nfsu_tripura_17_jan_25.jpg" alt="Poster - NFSU Tools Session"> -->
+            <h3>Cybersecurity Tools Training</h3>
+            <p><strong>Date:</strong> 17 January 2025</p>
+            <p><strong>Organized by:</strong> NFSU Tripura Campus</p>
+            <p><strong>Mode:</strong> Online</p>
+            <ul>
+                <li>Tool usage: Nmap, Wireshark, Burp Suite</li>
+                <li>Practical Vulnerability Scanning</li>
+            </ul>
+        </div>
+
+        <!-- Session: JECRC Jaipur (Nmap) -->
+        <div class="session">
+            <!-- <img src="images/jecrc_nmap_16_jan_25.jpg" alt="Poster - JECRC Nmap Training"> -->
+            <h3>Network Scanning with Nmap</h3>
+            <p><strong>Date:</strong> 16 January 2025</p>
+            <p><strong>Organized by:</strong> JECRC University, Jaipur</p>
+            <p><strong>Mode:</strong> Online</p>
+            <ul>
+                <li>Network Security and Port Scanning</li>
+                <li>Identifying Vulnerabilities with Nmap</li>
+            </ul>
+        </div>
+
+        <!-- Session: Pillai College -->
+        <div class="session">
+            <!-- <img src="images/pillai_networking_jan_25.jpg" alt="Poster - Pillai Networking Fundamentals"> -->
+            <h3>Fundamentals of Networking</h3>
+            <p><strong>Date:</strong> January 2025</p>
+            <p><strong>Organized by:</strong> Pillai College of Engineering, New Panvel</p>
+            <p><strong>Mode:</strong> Online</p>
+            <ul>
+                <li>Digital Communication Concepts</li>
+                <li>Understanding Basic Protocols</li>
+            </ul>
+        </div>
+    </section>
+
+
+
+    <footer>
+        &copy; 2025 Goverdhan Kumar • <a href="https://linkedin.com/in/wh04m1i">LinkedIn</a> • <a
+            href="https://github.com/wh04m1i">GitHub</a>
+    </footer>
+
+    <script>
+        const canvas = document.querySelector("canvas.matrix");
+        const ctx = canvas.getContext("2d");
+        canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth;
+        const letters = Array(256).join("1").split("");
+
+        function draw() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#ff3333";
+            letters.forEach((y_pos, index) => {
+                const text = String.fromCharCode(3e4 + Math.random() * 33);
+                const x_pos = index * 10;
+                ctx.fillText(text, x_pos, y_pos);
+                letters[index] = y_pos > canvas.height + Math.random() * 1e4 ? 0 : y_pos + 10;
+            });
+        }
+        setInterval(draw, 33);
+    </script>
+</body>
+
+</html>

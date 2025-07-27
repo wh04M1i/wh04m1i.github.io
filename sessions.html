@@ -7,11 +7,18 @@
     <title>Sessions | Goverdhan Kumar</title>
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <style>
-        body {
+        * {
+            box-sizing: border-box;
             margin: 0;
+            padding: 0;
+        }
+
+        body {
             font-family: 'Share Tech Mono', monospace;
             background: #000;
             color: #33ff33;
+            overflow-x: hidden;
+            overflow-y: auto;
         }
 
         canvas.matrix {
@@ -45,6 +52,30 @@
             text-shadow: 0 0 5px #33ff33;
         }
 
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            background-color: #00000080;
+            backdrop-filter: blur(6px);
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        nav a {
+            color: #00ffee;
+            margin: 0 12px;
+            font-size: 1rem;
+            border-bottom: 1px dashed transparent;
+            transition: border-bottom 0.3s;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: red;
+            border-bottom: 1px dashed red;
+        }
+
         .session {
             max-width: 900px;
             margin: 2rem auto;
@@ -68,7 +99,9 @@
         }
 
         .session p {
-            margin: 0.3rem 0;
+            margin: 0.5rem 0;
+            font-size: 1rem;
+            line-height: 1.6;
         }
 
         .session ul {
@@ -89,16 +122,14 @@
             color: red;
         }
 
+        .no-border {
+            border-bottom: none !important;
+        }
+
         footer {
             border-top: 1px dashed #00ff99;
             color: #888;
             padding: 2rem 1rem;
-        }
-
-        .session p {
-            margin: 0.5rem 0;
-            font-size: 1rem;
-            line-height: 1.6;
         }
     </style>
 </head>
@@ -108,20 +139,44 @@
     <div class="overlay"></div>
 
     <header>
-        <h1>&lt;/&gt; Sessions Conducted</h1>
-        <p>Cybersecurity Talks, Webinars & Hands-on Training</p>
-
+        <div
+            style="width: 120px; height: 120px; border-radius: 50%; background-image: url('https://raw.githubusercontent.com/wh04M1i/wh04m1i.github.io/main/profile.jpeg'); background-size: cover; background-position: center; margin: auto; box-shadow: 0 0 15px #00ff99;">
+        </div>
+        <h1>&lt;/&gt; Goverdhan Kumar</h1>
+        <p>Cybersecurity Engineer | Digital Forensics Enthusiast | Speaker | Educator | Sketch Artist</p>
+        <p style="margin-top: 10px;">
+            <a href="mailto:kumarpgoverdhan@gmail.com">kumarpgoverdhan@gmail.com</a> |
+            <a href="tel:+919523917937">+91 9523917937</a>
+        </p>
+        <p>
+            <a href="https://linkedin.com/in/wh04m1i" target="_blank">LinkedIn</a> |
+            <a href="https://github.com/wh04m1i" target="_blank">GitHub</a> |
+            <a href="https://instagram.com/who4m1i" target="_blank">Instagram</a>
+        </p>
+        <p><span id="typewriter"></span><span class="cursor">_</span></p>
     </header>
 
+    <nav>
+        <a href="index.html">[ Home ]</a>
+        <a href="writeups.html">[ Writeups ]</a>
+        <a href="sessions.html">[ Sessions ]</a>
+        <a href="startups.html">[ Startups ]</a>
+        <a href="gallery.html">[ Gallery ]</a>
+        <a href="contact.html">[ Contact ]</a>
+    </nav>
 
+    <header class="no-border">
+        <h1>&lt;/&gt; Sessions Conducted</h1>
+        <p>Cybersecurity Talks, Webinars & Hands-on Training</p>
+        <p style="text-align:center; color: lightgreen; font-style: italic;">
+            "Empowering minds through real-world cybersecurity sessions."
+        </p>
 
-    <p style="text-align:center; color: lightgreen; font-style: italic;">
-        "Empowering minds through real-world cybersecurity sessions."
-    </p>
+        <div style="text-align:center; margin-bottom: 15px;">
+            <span style="color: cyan; font-weight: bold; font-size: 18px;">🚀 Highlights from Our Workshops</span>
+        </div>
+    </header>
 
-    <div style="text-align:center; margin-bottom: 15px;">
-        <span style="color: cyan; font-weight: bold; font-size: 18px;">🚀 Highlights from Our Workshops</span>
-    </div>
 
 
     <section class="sessions">
@@ -327,13 +382,52 @@
     </section>
 
 
-
     <footer>
         &copy; 2025 Goverdhan Kumar • <a href="https://linkedin.com/in/wh04m1i">LinkedIn</a> • <a
             href="https://github.com/wh04m1i">GitHub</a>
     </footer>
 
+
     <script>
+        const roles = [
+            "Cybersecurity Engineer",
+            "Digital Forensics",
+            "OSINT",
+            "Educator",
+            "Sketch Artist"
+        ];
+
+        let i = 0, j = 0, current = "", isDeleting = false;
+        const speed = 100;
+
+        function typeEffect() {
+            const typeBox = document.getElementById("typewriter");
+
+            if (i < roles.length) {
+                if (!isDeleting && j <= roles[i].length) {
+                    current = roles[i].substring(0, j++);
+                    typeBox.textContent = current;
+                    setTimeout(typeEffect, speed);
+                } else if (isDeleting && j > 0) {
+                    current = roles[i].substring(0, --j);
+                    typeBox.textContent = current;
+                    setTimeout(typeEffect, speed / 2);
+                } else if (!isDeleting && j > roles[i].length) {
+                    isDeleting = true;
+                    setTimeout(typeEffect, 1000);
+                } else {
+                    isDeleting = false;
+                    j = 0;
+                    i = (i + 1) % roles.length;
+                    setTimeout(typeEffect, 200);
+                }
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            typeEffect();
+        });
+
         const canvas = document.querySelector("canvas.matrix");
         const ctx = canvas.getContext("2d");
         canvas.height = window.innerHeight;
